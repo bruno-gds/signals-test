@@ -1,5 +1,4 @@
-import {Component, OnDestroy} from '@angular/core';
-import {Subscription} from "rxjs";
+import {Component} from '@angular/core';
 
 import {ContadorService} from "../../service/contador.service";
 
@@ -11,25 +10,7 @@ import {ContadorService} from "../../service/contador.service";
   templateUrl: './children.component.html',
   styleUrl: './children.component.scss'
 })
-export class ChildrenComponent implements OnDestroy {
+export class ChildrenComponent {
 
-  private readonly contadorSubject: Subscription;
-  contadorModoVelho: number = 0;
-
-  constructor(private readonly contadorService: ContadorService) {
-    this.contadorSubject = this.contadorService.valorAtualContadorBehavior()
-      .subscribe({
-        next: value => this.contadorModoVelho = value
-      })
-  }
-
-
-
-  adicionar() {
-    this.contadorService.adicionarNoContadorBehavior()
-  }
-
-  ngOnDestroy() {
-    this.contadorSubject.unsubscribe();
-  }
+  constructor(protected readonly contadorService: ContadorService) {}
 }

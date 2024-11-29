@@ -1,4 +1,4 @@
-import {Component, computed, Signal, signal} from '@angular/core';
+import {Component} from '@angular/core';
 
 import {ContadorService} from "../service/contador.service";
 import {ChildrenComponent} from "./children/children.component";
@@ -15,11 +15,7 @@ import {ChildrenComponent} from "./children/children.component";
 })
 export class BodyComponent {
 
-  constructor(private readonly contadorService: ContadorService) {}
-
-  valorSignal() {
-    return this.contadorService.valorAtualContadorSignal();
-  }
+  constructor(protected readonly contadorService: ContadorService) {}
 
   adicionarSignal() {
     this.contadorService.adicionarNoContadorSignal();
