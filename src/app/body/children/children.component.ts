@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, computed, signal, Signal} from '@angular/core';
 
 import {ContadorService} from "../../service/contador.service";
 
@@ -12,5 +12,12 @@ import {ContadorService} from "../../service/contador.service";
 })
 export class ChildrenComponent {
 
-  constructor(protected readonly contadorService: ContadorService) {}
+  contador: Signal<number> = signal(0);
+
+  constructor(protected readonly contadorService: ContadorService) {
+    this.contador = computed(() => {
+      console.log("ChildrenComponent......");
+      return contadorService.valorAtualContadorSignal()
+    })
+  }
 }
