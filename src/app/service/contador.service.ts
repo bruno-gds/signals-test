@@ -8,7 +8,6 @@ export class ContadorService {
   private readonly contadorSignal = signal(0);
 
   valorAtualContadorSignal() {
-    console.log("Pegando valor....")
     return this.contadorSignal();
   }
 

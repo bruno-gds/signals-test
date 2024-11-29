@@ -16,8 +16,4 @@ import {ChildrenComponent} from "./children/children.component";
 export class BodyComponent {
 
   constructor(protected readonly contadorService: ContadorService) {}
-
-  adicionarSignal() {
-    this.contadorService.adicionarNoContadorSignal();
-  }
 }
