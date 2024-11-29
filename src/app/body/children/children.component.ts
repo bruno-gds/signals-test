@@ -15,8 +15,10 @@ export class ChildrenComponent {
   contador: Signal<number> = signal(0);
 
   constructor(protected readonly contadorService: ContadorService) {
+    console.log("Iniciando ChildrenComponent......");
+
     this.contador = computed(() => {
-      console.log("ChildrenComponent......");
+      console.log("Signal - ChildrenComponent");
       return contadorService.valorAtualContadorSignal()
     })
   }
