@@ -8,6 +8,7 @@ export class ContadorService {
   private readonly contadorSignal = signal(0);
 
   valorAtualContadorSignal() {
+    console.log('valorAtualContadorSignal X');
     return this.contadorSignal();
   }
 
