@@ -15,11 +15,11 @@ import {ChildrenComponent} from "./children/children.component";
 })
 export class BodyComponent {
 
-  contador: number;
+  contador: number = 0;
 
   constructor(protected readonly contadorService: ContadorService) {
     console.log("Iniciando BodyComponent......");
-    this.contador = this.contadorService.valorAtualContadorSignal();
+    // this.contador = this.contadorService.valorAtualContadorSignal();
   }
 
   incrementarContador(): void {
