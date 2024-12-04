@@ -8,10 +8,11 @@ export class ContadorService {
   private readonly contadorSignal = signal(0);
 
   valorAtualContadorSignal() {
-    return this.contadorSignal();
+    console.log('acionou get');
+    return this.contadorSignal()
   }
 
   adicionarNoContadorSignal() {
-    this.contadorSignal.update(value => value + 1);
+    this.contadorSignal.set(this.contadorSignal() + 1);
   }
 }
