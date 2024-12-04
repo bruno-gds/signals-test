@@ -13,9 +13,9 @@ import {ContadorService} from "../../service/contador.service";
 export class ChildrenComponent {
 
   contador = computed(() => {
-    console.log("Signal ChildrenComponent - atualizando......");
     return this.contadorService.valorAtualContadorSignal()
   });
+
 
   constructor(protected readonly contadorService: ContadorService) {
     console.log("Iniciando ChildrenComponent......");
